@@ -3,6 +3,10 @@
 # Code by Yinzo:        https://github.com/Yinzo
 # Origin repository:    https://github.com/Yinzo/SmartQQBot
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 class Notify:
 
     def __init__(self, json_input):

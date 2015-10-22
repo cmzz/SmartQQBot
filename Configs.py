@@ -3,6 +3,10 @@
 # Code by Yinzo:        https://github.com/Yinzo
 # Origin repository:    https://github.com/Yinzo/SmartQQBot
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 import ConfigParser
 import os
 
@@ -68,6 +72,8 @@ class DefaultConfigs(Configs):
 
         else:
             self.conf.read(self.config_path)
+
+        self.conf.set('global', 'rob_name', "小蓝")
 
 
 class GroupConfig(Configs):

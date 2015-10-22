@@ -5,6 +5,10 @@
 
 import threading
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 from QQLogin import *
 from Configs import *
 from Msg import *
@@ -87,7 +91,7 @@ class Pm:
                 return False
 
     def callout(self, msg):
-        if "智障机器人" in msg.content:
+        if self.global_config.conf.get("global", "rob_name") in msg.content:
             logging.info(str(self.tid) + " calling me out, trying to reply....")
             self.reply("干嘛（‘·д·）")
             return True

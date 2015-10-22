@@ -3,6 +3,10 @@
 # Code by Yinzo:        https://github.com/Yinzo
 # Origin repository:    https://github.com/Yinzo/SmartQQBot
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 import cPickle
 
 from QQLogin import *
@@ -137,7 +141,7 @@ class Group:
         self.reply(result)
 
     def callout(self, msg):
-        if "智障机器人" in msg.content:
+        if self.global_config.conf.get("global", "rob_name") in msg.content:
             logging.info(str(self.gid) + " calling me out, trying to reply....")
             self.reply("干嘛（‘·д·）")
             return True
